@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dinara Dental Care</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            border: "hsl(30 15% 90%)",
+            input: "hsl(30 15% 90%)",
+            ring: "hsl(18 30% 28%)",
+            background: "hsl(0 0% 100%)",
+            foreground: "hsl(20 10% 15%)",
+            primary: {
+              DEFAULT: "hsl(18 30% 28%)",
+              foreground: "hsl(36 33% 97%)",
+            },
+            secondary: {
+              DEFAULT: "hsl(30 20% 95%)",
+              foreground: "hsl(20 10% 15%)",
+            },
+            destructive: {
+              DEFAULT: "hsl(0 84.2% 60.2%)",
+              foreground: "hsl(210 40% 98%)",
+            },
+            muted: {
+              DEFAULT: "hsl(30 15% 95%)",
+              foreground: "hsl(20 5% 45%)",
+            },
+            accent: {
+              DEFAULT: "hsl(30 20% 95%)",
+              foreground: "hsl(20 10% 15%)",
+            },
+            card: {
+              DEFAULT: "hsl(0 0% 100%)",
+              foreground: "hsl(20 10% 15%)",
+            },
+            popover: {
+              DEFAULT: "hsl(0 0% 100%)",
+              foreground: "hsl(20 10% 15%)",
+            },
+          },
+          borderRadius: {
+            lg: "0.75rem",
+            md: "calc(0.75rem - 2px)",
+            sm: "calc(0.75rem - 4px)",
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* CSS logic for page navigation */
+    .page { display: none; }
+    .page.active { display: block; animation: fadeIn 0.2s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    
+    /* Scrollbar styling for a cleaner look */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: hsl(30 15% 90%); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: hsl(30 15% 80%); }
+  </style>
+</head>
+<body class="bg-muted min-h-screen flex justify-center text-foreground font-sans antialiased">
+
+  <div class="w-full max-w-[420px] bg-background min-h-screen relative shadow-sm sm:border-x border-border">
+
+    <!-- ==============================================
+         PAGE 1: MAIN MENU
+         ============================================== -->
+    <div id="page-main" class="page active">
+      <!-- Header Section -->
+      <div class="relative mb-8">
+        <!-- Hero Banner Image -->
+        <div class="w-full h-48 overflow-hidden rounded-b-[2rem] shadow-sm">
+          <img src="hero-clinic.jpg" alt="Dinara Dental Care" class="w-full h-full object-cover object-center" onerror="this.src='https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=600&auto=format&fit=crop'" />
+        </div>
+        
+        <!-- Profile/Logo overlapping banner -->
+        <div class="flex flex-col items-center -mt-12 relative px-6">
+          <div class="w-24 h-24 rounded-full border-4 border-background bg-white shadow-md flex items-center justify-center overflow-hidden mb-4">
+            <img src="logo.png" alt="Logo" class="w-full h-full object-cover" onerror="this.outerHTML='<div class=\'w-full h-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-2xl\'>DDC</div>'" />
+          </div>
+          
+          <h1 class="text-xl font-bold tracking-tight text-foreground">Dinara Dental Care</h1>
+          <p class="text-sm text-muted-foreground mt-1">Klinik Gigi · Banjarmasin</p>
+          
+          <div id="status-badge" class="inline-flex items-center rounded-full border border-border px-3 py-1 text-xs font-semibold mt-4 bg-background text-foreground shadow-sm transition-all">
+            <span class="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+            Buka Hari Ini 10:00–21:00 WITA
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 pb-8">
+        <div class="flex flex-col items-center mb-8">
+          <div class="flex gap-3">
+            <a href="https://www.instagram.com/banmed.dental/" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-border bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-10 px-5 py-2">
+              <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.tiktok.com/@dinaradental" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-full text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-border bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-10 px-5 py-2">
+              <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              TikTok
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <!-- Button 1: Reservasi (Primary) -->
+          <a href="https://wa.me/6285828399611?text=Halo%20Dinara%20Dental%20Care%2C%20saya%20ingin%20reservasi%2Fkonsultasi." target="_blank" class="group flex items-center justify-between rounded-xl border border-transparent bg-primary p-4 text-primary-foreground shadow hover:bg-primary/90 transition-all">
+            <div class="flex flex-col text-left">
+              <span class="text-sm font-semibold tracking-tight">Reservasi / Konsultasi</span>
+              <span class="text-xs text-primary-foreground/80 mt-1 font-medium">Chat langsung via WhatsApp</span>
+            </div>
+            <svg class="h-4 w-4 text-primary-foreground/80 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+
+          <!-- Button 2: Promo -->
+          <button onclick="navigate('page-promo')" class="w-full relative group flex items-center justify-between rounded-xl border border-border bg-card p-4 text-card-foreground shadow-sm hover:bg-accent hover:text-accent-foreground transition-all text-left">
+            <div class="absolute top-0 right-4 -translate-y-1/2 inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80">PROMO</div>
+            <div class="flex flex-col">
+              <span class="text-sm font-semibold tracking-tight">Grand Opening Promo</span>
+              <span class="text-xs text-muted-foreground mt-1 font-medium">Diskon spesial hingga 50%</span>
+            </div>
+            <svg class="h-4 w-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+
+          <!-- Button 3: Pricelist -->
+          <button onclick="navigate('page-pricelist')" class="w-full group flex items-center justify-between rounded-xl border border-border bg-card p-4 text-card-foreground shadow-sm hover:bg-accent hover:text-accent-foreground transition-all text-left">
+            <div class="flex flex-col">
+              <span class="text-sm font-semibold tracking-tight">Daftar Harga Lengkap</span>
+              <span class="text-xs text-muted-foreground mt-1 font-medium">Semua layanan dan tarif perawatan</span>
+            </div>
+            <svg class="h-4 w-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+
+          <!-- Button 4: Location -->
+          <button onclick="navigate('page-location')" class="w-full group flex items-center justify-between rounded-xl border border-border bg-card p-4 text-card-foreground shadow-sm hover:bg-accent hover:text-accent-foreground transition-all text-left">
+            <div class="flex flex-col">
+              <span class="text-sm font-semibold tracking-tight">Lokasi & Jam Buka</span>
+              <span class="text-xs text-muted-foreground mt-1 font-medium">Jl. Bumi Mas Raya, Banjarmasin</span>
+            </div>
+            <svg class="h-4 w-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+
+          <!-- Button 5: Website -->
+          <a href="https://dinaradentalcare.vercel.app/" target="_blank" class="w-full group flex items-center justify-between rounded-xl border border-border bg-card p-4 text-card-foreground shadow-sm hover:bg-accent hover:text-accent-foreground transition-all text-left">
+            <div class="flex flex-col">
+              <span class="text-sm font-semibold tracking-tight">Website Utama</span>
+              <span class="text-xs text-muted-foreground mt-1 font-medium">Kunjungi situs web resmi kami</span>
+            </div>
+            <svg class="h-4 w-4 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="mt-12 text-center text-xs text-muted-foreground">
+          © 2026 Dinara Dental Care · Banjarmasin
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ==============================================
+         PAGE 2: PROMO
+         ============================================== -->
+    <div id="page-promo" class="page min-h-screen relative">
+      <div class="sticky top-0 z-50 flex h-14 items-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
+        <button onclick="navigate('page-main')" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 w-9 mr-2 text-muted-foreground">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <span class="font-semibold text-sm">Grand Opening Promo</span>
+      </div>
+
+      <div class="p-6 pb-24">
+        <p class="text-sm text-muted-foreground mb-6 leading-relaxed">
+          Dapatkan penawaran eksklusif terbatas selama periode Grand Opening. Slot sangat terbatas setiap harinya.
+        </p>
+
+        <!-- Promo Group 1 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Behel Special Price</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Metal Basic</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 4.500.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 2.499.000</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Metal Premium</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 6.000.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 3.499.000</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Self Ligating</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 9.000.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 6.499.000</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Sapphire</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 8.000.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 4.999.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo Group 2 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Paket Bundling Hemat</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Dental Spa + Tambal/Cabut</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 1.000.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 599.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo Group 3 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Perawatan Gigi</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Dental Spa</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 650.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 349.000</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Scaling Basic</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 400.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 199.000</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Bleaching</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 1.500.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 799.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo Group 4 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Perawatan Lainnya</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Cabut Gigi (mulai dari)</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 350.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 200.000</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Cabut Gigi Anak (mulai dari)</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 250.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 150.000</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0">
+              <span class="text-sm font-medium">Tambal Gigi (mulai dari)</span>
+              <div class="flex flex-col items-end">
+                <span class="text-[11px] text-muted-foreground line-through">Rp 350.000</span>
+                <span class="text-sm font-semibold text-primary">Rp 200.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promo Group 5 (Bonus) -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Bonus Spesial</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex items-start gap-3 p-4 border-b last:border-0">
+              <svg class="w-4 h-4 text-green-600 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-sm">Konsultasi dokter gratis tanpa batas</span>
+            </div>
+            <div class="flex items-start gap-3 p-4 border-b last:border-0">
+              <svg class="w-4 h-4 text-green-600 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-sm">Free gift untuk setiap pasien baru</span>
+            </div>
+            <div class="flex items-start gap-3 p-4 border-b last:border-0">
+              <svg class="w-4 h-4 text-green-600 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-sm">Slot terbatas, berlaku selama periode Grand Opening</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Sticky CTA -->
+      <div class="fixed bottom-0 w-full max-w-[420px] border-t bg-background/95 backdrop-blur p-4 pb-6">
+        <a href="https://wa.me/6285828399611?text=Halo%20Dinara%20Dental%20Care%2C%20saya%20tertarik%20dengan%20promo%20Grand%20Opening.%20Apakah%20masih%20tersedia%3F" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary text-primary-foreground shadow hover:bg-primary/90 h-11 px-8 w-full">
+          <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Ambil Promo Sekarang
+        </a>
+      </div>
+    </div>
+
+
+    <!-- ==============================================
+         PAGE 3: PRICELIST
+         ============================================== -->
+    <div id="page-pricelist" class="page min-h-screen relative">
+      <div class="sticky top-0 z-50 flex h-14 items-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
+        <button onclick="navigate('page-main')" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 w-9 mr-2 text-muted-foreground">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <span class="font-semibold text-sm">Daftar Harga Lengkap</span>
+      </div>
+
+      <div class="p-6 pb-24">
+        <p class="text-sm text-muted-foreground mb-6 leading-relaxed">
+          Semua harga di bawah adalah estimasi. Biaya akhir ditentukan setelah pemeriksaan klinis oleh dokter gigi kami agar sesuai dengan kondisi gigi Anda.
+        </p>
+
+        <!-- Kat 1 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Perawatan Gigi dan Mulut Dewasa</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Konsultasi tanpa tindakan</span><span class="text-sm font-semibold text-green-600">Gratis</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Pengulangan pencetakan alginat</span><span class="text-sm font-medium">Rp 50.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Pengulangan pencetakan putty</span><span class="text-sm font-medium">Rp 100.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Scalling ringan</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Scalling sedang</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Scalling sedang - berat</span><span class="text-sm font-medium">Rp 350.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Scalling berat</span><span class="text-sm font-medium">Rp 400.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Splinting 1-3 gigi</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Splinting 4-6 gigi</span><span class="text-sm font-medium">Rp 400.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Splinting 7-14 gigi</span><span class="text-sm font-medium">Rp 500.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Frenektomi</span><span class="text-sm font-medium">Rp 1.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Kuretase gusi</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Bleaching</span><span class="text-sm font-medium">Rp 1.500.000</span></div>
+            <div class="flex justify-between items-center px-4 pt-4 pb-2"><span class="text-sm font-bold">Lepas veneer</span></div>
+            <div class="flex justify-between items-center px-4 py-2"><span class="text-sm text-muted-foreground ml-2">(1–5 gigi)</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center px-4 py-2"><span class="text-sm text-muted-foreground ml-2">(Full RA, 6–10 gigi)</span><span class="text-sm font-medium">Rp 600.000</span></div>
+            <div class="flex justify-between items-center px-4 pb-4 border-b last:border-0"><span class="text-sm text-muted-foreground ml-2">(Full RB, 6–10 gigi)</span><span class="text-sm font-medium">Rp 600.000</span></div>
+          </div>
+        </div>
+
+        <!-- Kat 2 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Prostodonsia (Gigi Tiruan)</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center px-4 pt-4 pb-2"><span class="text-sm font-bold">Gigi Tiruan Sebagian Lepasan</span></div>
+            <div class="flex justify-between items-center px-4 py-2"><span class="text-sm text-muted-foreground ml-2">Gigi pertama</span><span class="text-sm font-medium">Rp 1.800.000</span></div>
+            <div class="flex justify-between items-center px-4 pb-4 border-b last:border-0"><span class="text-sm text-muted-foreground ml-2">Gigi selanjutnya (per gigi)</span><span class="text-sm font-medium">Rp 200.000</span></div>
+
+            <div class="flex justify-between items-center px-4 pt-4 pb-2"><span class="text-sm font-bold">Gigi Tiruan Cekat</span></div>
+            <div class="flex justify-between items-center px-4 py-2"><span class="text-sm text-muted-foreground ml-2">PFM (per gigi)</span><span class="text-sm font-medium">Rp 2.000.000</span></div>
+            <div class="flex justify-between items-center px-4 pb-4 border-b last:border-0"><span class="text-sm text-muted-foreground ml-2">Zircone / Full Zircone (per gigi)</span><span class="text-sm font-medium">Rp 3.000.000</span></div>
+          </div>
+        </div>
+
+        <!-- Kat 3 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Penambalan Gigi</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi anterior sangat kecil</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi anterior kecil</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi anterior sedang</span><span class="text-sm font-medium">Rp 350.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi anterior besar</span><span class="text-sm font-medium">Rp 450.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi anterior full mahkota</span><span class="text-sm font-medium">Rp 500.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi posterior sangat kecil</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi posterior kecil</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi posterior sedang</span><span class="text-sm font-medium">Rp 350.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi posterior besar</span><span class="text-sm font-medium">Rp 400.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">GIC kecil</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">GIC sedang</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">GIC besar</span><span class="text-sm font-medium">Rp 350.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Veneer Komposit (per gigi)</span><span class="text-sm font-medium">Rp 600.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Veneer Porcelain (per gigi)</span><span class="text-sm font-medium">Rp 3.000.000</span></div>
+          </div>
+        </div>
+
+        <!-- Kat 4 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Cabut Gigi</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Tanpa komplikasi</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Dengan penyulit</span><span class="text-sm font-medium">Rp 350.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Odontektomi klas 1</span><span class="text-sm font-medium">Rp 2.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Odontektomi klas 2</span><span class="text-sm font-medium">Rp 2.500.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Dry Socket</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Alveolektomi per regio</span><span class="text-sm font-medium">Rp 400.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gingivektomi per regio</span><span class="text-sm font-medium">Rp 400.000</span></div>
+          </div>
+        </div>
+
+        <!-- Kat 5 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Perawatan Saluran Akar</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Open access</span><span class="text-sm font-medium">Rp 100.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Preparasi 1 akar</span><span class="text-sm font-medium">Rp 200.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Preparasi 2 akar</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Preparasi 3 akar</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Obturasi 1 akar</span><span class="text-sm font-medium">Rp 200.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Obturasi 2 akar</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Obturasi 3 akar</span><span class="text-sm font-medium">Rp 350.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Obturasi 4 akar atau lebih</span><span class="text-sm font-medium">Rp 400.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Devitalisasi</span><span class="text-sm font-medium">Rp 100.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Dressing</span><span class="text-sm font-medium">Rp 150.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Tambalan sementara</span><span class="text-sm font-medium">Rp 100.000</span></div>
+          </div>
+        </div>
+
+        <!-- Kat 6 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Pedodonsia (Perawatan Gigi Anak)</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Exo topikal</span><span class="text-sm font-medium">Rp 150.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Exo anastesi</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Fissure sealant</span><span class="text-sm font-medium">Rp 250.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">PRR</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Topikal aplikasi fluor</span><span class="text-sm font-medium">Rp 400.000</span></div>
+          </div>
+        </div>
+
+        <!-- Kat 7 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Orthodonsia (Kawat Gigi)</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Metal ringan</span><span class="text-sm font-medium">Rp 4.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Metal sedang</span><span class="text-sm font-medium">Rp 5.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Metal berat</span><span class="text-sm font-medium">Rp 6.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Ceramic ringan</span><span class="text-sm font-medium">Rp 7.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Ceramic sedang</span><span class="text-sm font-medium">Rp 7.500.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Ceramic berat</span><span class="text-sm font-medium">Rp 8.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Kontrol ganti karet</span><span class="text-sm font-medium">Rp 200.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Kontrol ganti karet dan kawat</span><span class="text-sm font-medium">Rp 300.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Self ligating ringan</span><span class="text-sm font-medium">Rp 8.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Self ligating sedang</span><span class="text-sm font-medium">Rp 9.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Self ligating berat</span><span class="text-sm font-medium">Rp 10.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Self ligating ceramic ringan</span><span class="text-sm font-medium">Rp 10.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Self ligating ceramic sedang</span><span class="text-sm font-medium">Rp 11.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Self ligating ceramic berat</span><span class="text-sm font-medium">Rp 12.000.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Kontrol ganti karet / kawat satu rahang</span><span class="text-sm font-medium">Rp 150.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Buccal tube / bracket hilang per 1 pcs</span><span class="text-sm font-medium">Rp 30.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Penambahan alat (lingual button)</span><span class="text-sm font-medium">Rp 30.000</span></div>
+          </div>
+        </div>
+
+        <!-- Kat 8 -->
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="flex flex-col space-y-1.5 p-4 border-b bg-muted/30">
+            <h3 class="font-semibold leading-none tracking-tight text-sm">Harga Paketan</h3>
+          </div>
+          <div class="p-0">
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi Tiruan Cekat + PSA + Pasak — PFM</span><span class="text-sm font-medium">Rp 2.600.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">Gigi Tiruan Cekat + PSA + Pasak — Zircone</span><span class="text-sm font-medium">Rp 3.600.000</span></div>
+            <div class="flex justify-between items-center p-4 border-b last:border-0"><span class="text-sm font-medium">PSA + Pasak + Mahkota Komposit</span><span class="text-sm font-medium">Rp 1.200.000</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Sticky CTA -->
+      <div class="fixed bottom-0 w-full max-w-[420px] border-t bg-background/95 backdrop-blur p-4 pb-6">
+        <a href="https://wa.me/6285828399611?text=Halo%20Dinara%20Dental%20Care%2C%20saya%20ingin%20menanyakan%20detail%20harga%20perawatan." target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary text-primary-foreground shadow hover:bg-primary/90 h-11 px-8 w-full">
+          <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Tanya Harga via WhatsApp
+        </a>
+      </div>
+    </div>
+
+
+    <!-- ==============================================
+         PAGE 4: LOCATION
+         ============================================== -->
+    <div id="page-location" class="page min-h-screen relative">
+      <div class="sticky top-0 z-50 flex h-14 items-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4">
+        <button onclick="navigate('page-main')" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 w-9 mr-2 text-muted-foreground">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <span class="font-semibold text-sm">Lokasi & Jam Buka</span>
+      </div>
+
+      <div class="p-6">
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6 overflow-hidden">
+          <iframe class="w-full h-56 border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15931.4284166297!2d114.5932!3d-3.334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de421469502ab65%3A0xc3f10efbbfcc805b!2sKlinik%20Gigi%20Banjarmasin%20(Dinara%20Dental%20Care)!5e0!3m2!1sen!2sid!4v1715690000000!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="p-4 bg-muted/30 border-t">
+            <a href="https://maps.app.goo.gl/BkEJ8AXwMt9Sxnwp8" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-border bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 w-full">
+              Buka di Aplikasi Google Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-xl border bg-card text-card-foreground shadow-sm mb-6">
+          <div class="p-4 border-b">
+            <p class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Alamat</p>
+            <p class="text-sm font-medium leading-relaxed">Jl. Bumi Mas Raya, Pemurus Baru, Kec. Banjarmasin Selatan, Kota Banjarmasin, Kalimantan Selatan 70236</p>
+          </div>
+          <div class="p-4 border-b">
+            <p class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Jam Operasional</p>
+            <p class="text-sm font-medium leading-relaxed">Senin – Sabtu, pukul 10:00 – 21:00 WITA</p>
+            <p class="text-xs font-semibold text-destructive mt-1">Minggu: Tutup</p>
+          </div>
+          <div class="p-4">
+            <p class="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Kontak</p>
+            <p class="text-sm font-medium leading-relaxed">0858-2839-9611</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <a href="https://wa.me/6285828399611?text=Halo%20Dinara%20Dental%20Care%2C%20saya%20ingin%20reservasi%2Fkonsultasi." target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary text-primary-foreground shadow hover:bg-primary/90 h-11 px-8 w-full">
+            <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Reservasi via WhatsApp
+          </a>
+          <a href="https://dinaradentalcare.vercel.app/" target="_blank" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring border border-border bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-11 px-8 w-full">
+            <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            Kunjungi Website Utama
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Navigation Logic
+    function navigate(pageId) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    // Dynamic Status Badge Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const statusBadge = document.getElementById('status-badge');
+      if (statusBadge) {
+        // getDay(): 0 = Minggu, 1 = Senin, ... 6 = Sabtu
+        const day = new Date().getDay(); 
+        const hour = new Date().getHours();
+        
+        if (day === 0) {
+          // Jika hari Minggu
+          statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-destructive mr-2 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></span>Minggu: Tutup';
+        } else {
+          // Jika Senin - Sabtu
+          let isOpen = false;
+          // Asumsi sederhana jam buka 10 - 21 (Tergantung zona waktu device klien)
+          if (hour >= 10 && hour < 21) {
+            isOpen = true;
+          }
+          
+          if (isOpen) {
+            statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.8)]"></span>Buka Sekarang 10:00–21:00';
+          } else {
+            statusBadge.innerHTML = '<span class="w-2 h-2 rounded-full bg-orange-500 mr-2"></span>Tutup (Buka 10:00–21:00)';
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
